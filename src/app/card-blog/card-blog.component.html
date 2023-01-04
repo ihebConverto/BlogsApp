@@ -1,0 +1,22 @@
+<div (click)="selectBlog(blog)" class="card" [ngClass]="{isSuccess: blog.likes > blog.dislikes , isFailed: blog.likes < blog.dislikes}">
+    <h3 class="title">{{blog.title}}</h3>
+    <p class="description">
+        {{blog.body}}
+    </p>
+    <div class="votes row">
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    <div class="statics row">
+        <div class="col like-col"><i class="material-icons">thumb_up</i>{{blog.likes}}</div>
+        <div class="col dislike-col"><i class="material-icons">thumb_down</i>{{blog.dislikes}}</div>
+    </div>
+    <div class="author">
+        <h4 class="block-title">
+            Author
+        </h4>
+        <h4 class="author-name">
+            {{ blog.author}}
+        </h4>
+    </div>
+</div>

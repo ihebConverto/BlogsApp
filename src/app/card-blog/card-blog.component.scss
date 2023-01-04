@@ -1,0 +1,119 @@
+$primary-color:#425990;
+$secondary-color:#1f3768;
+$main-color:#e4e8f9;
+.card {
+    &:hover {
+        cursor: pointer;
+    }
+    margin: 10px;
+    border-radius: 2px;
+    box-shadow: 10px 10px 23px rgba(225, 225, 227, 0.443),
+    -5px -4px 11px rgba(225, 225, 227, 0.443);
+    border: none;
+    min-height: 270px;
+    overflow: hidden;
+    padding: 7px;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    .title {
+        font-size: 18px;
+        color: rgb(66 89 144);
+        text-shadow: 1px 1px 0px hsla(0, 0%, 43%, 0.08);
+        display: -webkit-box;
+        height: 1.7em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        padding-top: 10px;
+    }
+    .description {
+        margin-top: 12px;
+        padding-top: 7px;
+        display: -webkit-box;
+        border-top: 1px solid rgba(45, 45, 45, 0.193);
+        height: 6.5em;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        color: rgb(106, 106, 106);
+    }
+    .statics {
+        border-top: 1px solid rgba(45, 45, 45, 0.053);
+        border-bottom: 1px solid rgba(45, 45, 45, 0.053);
+        background: rgba(247, 247, 247, 0.363);
+        .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 3px;
+            &:last-child {
+                border-left: 1px solid rgba(45, 45, 45, 0.193);
+            }
+            i {
+                font-size: 13px;
+                margin-right: 5px;
+            }
+        }
+        .dislike-col {
+            color: rgb(250, 87, 87);
+        }
+        .like-col {
+            color: rgb(76, 147, 76);
+        }
+    }
+    .author {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        left: 0px;
+        .block-title {
+            font-size: 15px;
+            color: $primary-color;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .author-name {
+            width: 100%;
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            margin: 0px;
+            background-color: $primary-color;
+            padding: 5px;
+            margin-top: 2px;
+        }
+    }
+}
+
+.isSuccess {
+    animation: float 6s ease-in-out infinite;
+    background: rgba(green, 0.010);
+    .like-col {
+        color: white!important;
+        background-color: rgba(76, 147, 76, 0.695);
+        ;
+    }
+}
+
+.isFailed {
+    background: rgba(red, 0.010);
+    .dislike-col {
+        color: white!important;
+        background-color: rgb(250, 87, 87, 0.695);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}

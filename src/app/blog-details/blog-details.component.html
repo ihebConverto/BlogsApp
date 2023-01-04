@@ -1,0 +1,13 @@
+<div class="contain">
+    <h2>{{currentBlog.title}}</h2>
+    <span><i class="material-icons">edit</i>{{currentBlog.author}}</span>
+    <p>{{currentBlog.body}}</p>
+    <div (click)="back()" class="pop-back">
+        <i class="material-icons">arrow_back_ios</i> &nbsp;Back
+    </div>
+    <div class="statics row">
+        <div class="col like-col"><i class="material-icons">thumb_up</i>{{currentBlog.likes}}</div>
+        <div class="col dislike-col"><i class="material-icons">thumb_down</i>{{currentBlog.dislikes}}</div>
+    </div>
+
+</div>

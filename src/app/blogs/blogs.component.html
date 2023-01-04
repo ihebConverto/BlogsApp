@@ -1,0 +1,16 @@
+<app-loading *ngIf="service.isLoading"></app-loading>
+<div *ngIf="!service.isLoading" class="row">
+    <div class="col-lg-2 col-sm-12 col-md-12 col-12">
+        <h3 class="main-title">Blogs List </h3>
+    </div>
+    <div class="col">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" (input)="getFiltredItems($event)" placeholder="Search by Title or Content ..." aria-label="Search" />
+        </div>
+    </div>
+</div>
+<hr *ngIf="!service.isLoading">
+
+<div class="row">
+    <app-card-blog (onSelected)="showDetails($event)" class="col-12 col-lg-4 col-md-6 col-sm-12" *ngFor="let blog of filterBlogs" [blog]="blog"></app-card-blog>
+</div>

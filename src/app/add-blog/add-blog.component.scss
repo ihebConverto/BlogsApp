@@ -1,0 +1,23 @@
+.btnGroup {
+    margin-top: 20px;
+    button {
+        margin: 10px;
+    }
+}
+
+.register-form {
+    background-color: rgb(66 89 144 / 4%);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 14px -6px rgba(211, 211, 211, 0.934);
+    label {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        color: rgb(106, 106, 106);
+        font-weight: bold;
+    }
+    margin: 10px auto;
+    @media (min-width: 900px) {
+        width: 60%;
+    }
+}

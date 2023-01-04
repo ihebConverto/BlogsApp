@@ -1,0 +1,49 @@
+.contain {
+    .statics {
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .col {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            i {
+                margin-right: 10px;
+            }
+        }
+        .dislike-col {
+            color: rgb(250, 87, 87);
+        }
+        .like-col {
+            color: rgb(76, 147, 76);
+        }
+    }
+    span {
+        color: rgba(60, 131, 255, 0.809);
+        font-size: 18px;
+        i {
+            font-size: 15px;
+            margin-right: 10px;
+        }
+    }
+    .pop-back {
+        display: flex;
+        align-items: center;
+        &:hover {
+            color: rgba(60, 131, 255, 0.809);
+            cursor: pointer;
+        }
+        transition: all 0.2s ease-in;
+        font-size: 15px;
+        font-weight: bold;
+        i {
+            font-size: 15px;
+        }
+    }
+    p {
+        color: rgb(136, 136, 136);
+        font-size: 17px;
+        margin: 20px auto;
+    }
+}
