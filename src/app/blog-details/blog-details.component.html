@@ -6,8 +6,8 @@
         <i class="material-icons">arrow_back_ios</i> &nbsp;Back
     </div>
     <div class="statics row">
-        <div class="col like-col"><i class="material-icons">thumb_up</i>{{currentBlog.likes}}</div>
-        <div class="col dislike-col"><i class="material-icons">thumb_down</i>{{currentBlog.dislikes}}</div>
+        <div (click)="likeThis(true)" class="col like-col"><i class="material-icons">thumb_up</i>{{currentBlog.likes}}</div>
+        <div (click)="likeThis(false)" class=" col dislike-col "><i class="material-icons ">thumb_down</i>{{currentBlog.dislikes}}</div>
     </div>
 
 </div>

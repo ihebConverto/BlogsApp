@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServiceProviderService {
+
 isLoading:any=false;
 localUrl = 'assets/blogs.json';
 fastApiUrl='http://localhost:8000';
@@ -45,6 +46,27 @@ fastApiUrl='http://localhost:8000';
         console.log(err);
         reject(err);
         this.isLoading=false;
+      })
+    })
+  }
+
+
+  addBlogbyLikes(id: any, islikesTapped: boolean) {
+    return new Promise<any>((resolve, reject) => {
+      const headers = new HttpHeaders()
+      .set('content-type','application/json')
+      .set('Access-Control-Allow-Origin', '*');  
+       // To try Local json File Please put localUrl inside the get
+      let route=islikesTapped ? 'likes': 'dislikes';
+      this.http.get(this.fastApiUrl+`/${route}/${id}`).subscribe((data:any)=>{
+        console.log(data)
+        if(islikesTapped)
+        resolve('likes');
+        else
+        resolve('dislikes');
+      },err=>{
+        console.log(err);
+        reject(err);
       })
     })
   }

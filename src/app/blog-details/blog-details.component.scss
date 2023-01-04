@@ -8,6 +8,12 @@
             display: flex;
             justify-content: center;
             align-content: center;
+            cursor: pointer;
+            &:hover {
+                i {
+                    transform: scale(1.2);
+                }
+            }
             i {
                 margin-right: 10px;
             }

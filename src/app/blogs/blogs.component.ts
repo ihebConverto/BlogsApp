@@ -29,8 +29,7 @@ export class BlogsComponent {
 
 // show Clicked card details
 showDetails(blog:any){
-  console.log(blog);
-  this.router.navigate(["/blog-details"],{queryParams:blog});
+  this.router.navigate(["/blog-details"],{queryParams:{...blog , id:blog._id['$oid']}});
 }
 
 getFiltredItems($event:any){

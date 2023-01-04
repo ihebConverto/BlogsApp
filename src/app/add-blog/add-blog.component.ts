@@ -42,7 +42,11 @@ export class AddBlogComponent {
     if (this.blogForm.invalid) {
       return
     }
-     this.service.addBlog(this.blogForm.value).then((res:any)=>{
+    // here we send randomly likes and dislikes to see diferent cases reflect in our blogsList page design
+    // In real use case they must been initialise with 0.
+    let likes=this.getRandomInt(0,10);
+    let dislikes=this.getRandomInt(0,10);
+     this.service.addBlog({...this.blogForm.value , likes,dislikes}).then((res:any)=>{
       console.log(res);
       this.UiAlert.showSucess(`${this.blogForm.value.title} is successfully Added `,5000);
       this.back();
@@ -63,4 +67,11 @@ export class AddBlogComponent {
   back(): void {
     this.router.navigate(['/app-blogs'])
   }
+
+
+   getRandomInt(min:number, max:number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 }
